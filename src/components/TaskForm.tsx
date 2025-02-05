@@ -45,7 +45,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
             <Calendar
               mode="single"
               selected={dueDate ? new Date(dueDate) : undefined}
-              onSelect={(date) => setValue('due_date', date)}
+              onSelect={(date) => setValue('due_date', date ? date.toISOString() : '')}
               initialFocus
             />
           </PopoverContent>
